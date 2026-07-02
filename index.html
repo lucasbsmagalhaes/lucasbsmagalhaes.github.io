@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Bonomi Salvador Magalhães | Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#hero" class="logo">LBSM<span class="dot">.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="#projetos" class="nav-link">Projetos</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg-orb orb-1"></div>
+    <div class="hero-bg-orb orb-2"></div>
+    <div class="container hero-content">
+      <p class="hero-eyebrow reveal" data-reveal="fade-up">Olá, eu sou</p>
+      <h1 class="hero-name reveal" data-reveal="fade-up">Lucas Bonomi<br>Salvador Magalhães</h1>
+      <h2 class="hero-title reveal" data-reveal="fade-up">Estudante de Engenharia da Computação</h2>
+      <p class="hero-summary reveal" data-reveal="fade-up">
+        Transito entre hardware e software para construir soluções completas — de sensores
+        embarcados a agentes de inteligência artificial na nuvem. Curioso por natureza,
+        gosto de transformar ideias em sistemas que funcionam de ponta a ponta.
+      </p>
+      <div class="hero-actions reveal" data-reveal="fade-up">
+        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+        <a href="#contato" class="btn btn-ghost">Entrar em Contato</a>
+      </div>
+    </div>
+    <a href="#sobre" class="scroll-cue" aria-label="Rolar para baixo">
+      <span></span>
+    </a>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-reveal="fade-up">Sobre mim</p>
+      <h2 class="section-title reveal" data-reveal="fade-up">Da eletrônica ao código, e do código à nuvem</h2>
+      <div class="about-grid">
+        <p class="about-text reveal" data-reveal="fade-up">
+          Tenho uma base sólida que une <strong>hardware e software</strong>, construída a partir da
+          experiência prática com sistemas embarcados e IoT — projetando, programando e integrando
+          dispositivos como <strong>ESP32</strong> e <strong>Arduino</strong> a sensores e serviços em nuvem.
+          Do lado do software, atuo com <strong>Python</strong>, automações inteligentes e
+          <strong> Inteligência Artificial</strong>, aplicando desde agentes com tool calling até
+          visão computacional. Também tenho familiaridade com <strong>AWS</strong> para arquitetar
+          o backend por trás desses sistemas, conectando o mundo físico dos sensores ao mundo
+          digital dos dados.
+        </p>
+        <div class="about-stats reveal" data-reveal="fade-up">
+          <div class="stat-card">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Sensores integrados em projetos embarcados</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">AWS</span>
+            <span class="stat-label">Integração de nuvem para sistemas IoT</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">IA</span>
+            <span class="stat-label">Agentes, automação e visão computacional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="projetos">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-reveal="fade-up">Projetos</p>
+      <h2 class="section-title reveal" data-reveal="fade-up">O que venho construindo</h2>
+
+      <div class="projects-grid">
+        <article class="project-card project-card--expandable reveal" data-reveal="fade-up" data-project="agrovision" tabindex="0" role="button" aria-haspopup="dialog" aria-expanded="false">
+          <div class="project-card-head">
+            <span class="project-icon">🌱</span>
+            <span class="project-tag">IoT · AWS</span>
+          </div>
+          <h3 class="project-name">AgroVision AI</h3>
+          <p class="project-desc">
+            Sistema de monitoramento agrícola inteligente com 6 sensores distintos
+            coletando dados ambientais e do solo em tempo real, com integração à
+            AWS para armazenamento, processamento e visualização remota dos dados.
+          </p>
+          <div class="project-stack">
+            <span>ESP32</span><span>Sensores</span><span>AWS</span><span>Python</span>
+          </div>
+          <div class="project-card-cta">
+            <span>Ver estudo de caso</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </div>
+        </article>
+
+        <article class="project-card project-card--expandable reveal" data-reveal="fade-up" data-project="vagas-ia" tabindex="0" role="button" aria-haspopup="dialog" aria-expanded="false">
+          <div class="project-card-head">
+            <span class="project-icon">🤖</span>
+            <span class="project-tag">IA · Automação</span>
+          </div>
+          <h3 class="project-name">Automação de Busca de Vagas com IA</h3>
+          <p class="project-desc">
+            Sistema de automação construído em n8n com agentes de IA que utilizam
+            tool calling para buscar, filtrar e organizar vagas de emprego,
+            integrando múltiplas APIs REST para coleta e processamento de dados.
+          </p>
+          <div class="project-stack">
+            <span>n8n</span><span>Agentes IA</span><span>APIs REST</span>
+          </div>
+          <div class="project-card-cta">
+            <span>Ver estudo de caso</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </div>
+        </article>
+
+        <article class="project-card project-card--expandable reveal" data-reveal="fade-up" data-project="visao-computacional" tabindex="0" role="button" aria-haspopup="dialog" aria-expanded="false">
+          <div class="project-card-head">
+            <span class="project-icon">👁️</span>
+            <span class="project-tag">Visão Computacional</span>
+          </div>
+          <h3 class="project-name">Treinamento de IA para Validação de Imagens</h3>
+          <p class="project-desc">
+            Modelo de visão computacional treinado para validar e classificar
+            imagens automaticamente, aplicando técnicas de aprendizado de máquina
+            para garantir consistência e precisão na análise visual.
+          </p>
+          <div class="project-stack">
+            <span>Python</span><span>Visão Computacional</span><span>ML</span>
+          </div>
+          <div class="project-card-cta">
+            <span>Ver estudo de caso</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-reveal="fade-up">
+          <div class="project-card-head">
+            <span class="project-icon">🎨</span>
+            <span class="project-tag">3D · Design</span>
+          </div>
+          <h3 class="project-name">Modelagem e Texturização 3D</h3>
+          <p class="project-desc">
+            Criação de modelos 3D com modelagem detalhada e texturização realista,
+            utilizando Maya para a construção das geometrias e Substance Painter
+            para o desenvolvimento de materiais e texturas.
+          </p>
+          <div class="project-stack">
+            <span>Maya</span><span>Substance Painter</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="project-detail" id="detail-agrovision" aria-hidden="true">
+    <div class="project-detail-scroll">
+      <button class="detail-back" type="button" data-close-detail>
+        <span aria-hidden="true">←</span> Voltar
+      </button>
+      <div class="detail-content container">
+        <p class="detail-tag">IoT · AWS</p>
+        <h2 class="detail-title">AgroVision AI</h2>
+        <p class="detail-summary">
+          Sistema de monitoramento agrícola inteligente construído com 6 sensores distintos,
+          ESP32/Arduino e integração completa com a AWS para coleta, transmissão e visualização
+          de dados ambientais e do solo em tempo real.
+        </p>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">O Problema</h3>
+          <p>
+            O monitoramento agrícola e florestal tradicional costuma depender de rondas manuais
+            e leituras pontuais, o que é lento, caro e sujeito a falhas humanas — variações de
+            solo, umidade ou temperatura podem passar despercebidas até já causarem impacto na
+            produção. O AgroVision AI nasceu para substituir esse processo por coleta contínua
+            e automatizada.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Meu Papel</h3>
+          <p>
+            Atuei em um time de 3 pessoas responsável pelo projeto de ponta a ponta. Minha parte
+            se concentrou na camada de hardware e conectividade: implementei a leitura dos 6
+            sensores no ESP32/Arduino, a transmissão dos dados coletados para a AWS e a lógica
+            de segurança operacional por proximidade, que alerta quando algo se aproxima demais
+            da área monitorada.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Lógica Construída</h3>
+          <div class="code-block">
+            <ol class="code-lines">
+              <li><code>#include &lt;WiFi.h&gt;</code></li>
+              <li><code>#include &lt;HTTPClient.h&gt;</code></li>
+              <li><code>#include &lt;DHT.h&gt;</code></li>
+              <li><code></code></li>
+              <li><code>#define DHT_PIN 4</code></li>
+              <li><code>#define SOIL_PIN 34</code></li>
+              <li><code>#define LDR_PIN 35</code></li>
+              <li><code>#define TRIG_PIN 5</code></li>
+              <li><code>#define ECHO_PIN 18</code></li>
+              <li><code>#define RAIN_PIN 32</code></li>
+              <li><code>#define MQ135_PIN 33</code></li>
+              <li><code>#define DISTANCIA_MINIMA_SEGURA 20.0</code></li>
+              <li><code></code></li>
+              <li><code>DHT dht(DHT_PIN, DHT11);</code></li>
+              <li><code></code></li>
+              <li><code>struct LeituraSensores {</code></li>
+              <li><code>&nbsp;&nbsp;float temperatura;</code></li>
+              <li><code>&nbsp;&nbsp;float umidadeAr;</code></li>
+              <li><code>&nbsp;&nbsp;int umidadeSolo;</code></li>
+              <li><code>&nbsp;&nbsp;int luminosidade;</code></li>
+              <li><code>&nbsp;&nbsp;float distanciaCM;</code></li>
+              <li><code>&nbsp;&nbsp;int chuva;</code></li>
+              <li><code>&nbsp;&nbsp;int qualidadeAr;</code></li>
+              <li><code>};</code></li>
+              <li><code></code></li>
+              <li><code>float lerDistanciaCM() {</code></li>
+              <li><code>&nbsp;&nbsp;digitalWrite(TRIG_PIN, LOW);</code></li>
+              <li><code>&nbsp;&nbsp;delayMicroseconds(2);</code></li>
+              <li><code>&nbsp;&nbsp;digitalWrite(TRIG_PIN, HIGH);</code></li>
+              <li><code>&nbsp;&nbsp;delayMicroseconds(10);</code></li>
+              <li><code>&nbsp;&nbsp;digitalWrite(TRIG_PIN, LOW);</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;long duracao = pulseIn(ECHO_PIN, HIGH, 30000);</code></li>
+              <li><code>&nbsp;&nbsp;return duracao * 0.0343 / 2;</code></li>
+              <li><code>}</code></li>
+              <li><code></code></li>
+              <li><code>LeituraSensores lerTodosSensores() {</code></li>
+              <li><code>&nbsp;&nbsp;LeituraSensores dados;</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;dados.temperatura = dht.readTemperature();</code></li>
+              <li><code>&nbsp;&nbsp;dados.umidadeAr = dht.readHumidity();</code></li>
+              <li><code>&nbsp;&nbsp;dados.umidadeSolo = analogRead(SOIL_PIN);</code></li>
+              <li><code>&nbsp;&nbsp;dados.luminosidade = analogRead(LDR_PIN);</code></li>
+              <li><code>&nbsp;&nbsp;dados.distanciaCM = lerDistanciaCM();</code></li>
+              <li><code>&nbsp;&nbsp;dados.chuva = analogRead(RAIN_PIN);</code></li>
+              <li><code>&nbsp;&nbsp;dados.qualidadeAr = analogRead(MQ135_PIN);</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;return dados;</code></li>
+              <li><code>}</code></li>
+              <li><code></code></li>
+              <li><code>void verificarSegurancaProximidade(float distancia) {</code></li>
+              <li><code>&nbsp;&nbsp;if (distancia > 0 && distancia &lt; DISTANCIA_MINIMA_SEGURA) {</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;acionarAlertaProximidade();</code></li>
+              <li><code>&nbsp;&nbsp;}</code></li>
+              <li><code>}</code></li>
+              <li><code></code></li>
+              <li><code>String montarPayloadJSON(LeituraSensores dados) {</code></li>
+              <li><code>&nbsp;&nbsp;String payload = "{";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"temperatura\":" + String(dados.temperatura, 1) + ",";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"umidade_ar\":" + String(dados.umidadeAr, 1) + ",";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"umidade_solo\":" + String(dados.umidadeSolo) + ",";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"luminosidade\":" + String(dados.luminosidade) + ",";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"distancia_cm\":" + String(dados.distanciaCM, 2) + ",";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"chuva\":" + String(dados.chuva) + ",";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"qualidade_ar\":" + String(dados.qualidadeAr) + ",";</code></li>
+              <li><code>&nbsp;&nbsp;payload += "\"timestamp\":" + String(millis());</code></li>
+              <li><code>&nbsp;&nbsp;payload += "}";</code></li>
+              <li><code>&nbsp;&nbsp;return payload;</code></li>
+              <li><code>}</code></li>
+              <li><code></code></li>
+              <li><code>void enviarParaNuvem(String payload) {</code></li>
+              <li><code>&nbsp;&nbsp;if (WiFi.status() != WL_CONNECTED) return;</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;HTTPClient http;</code></li>
+              <li><code>&nbsp;&nbsp;http.begin(AWS_ENDPOINT);</code></li>
+              <li><code>&nbsp;&nbsp;http.addHeader("Content-Type", "application/json");</code></li>
+              <li><code>&nbsp;&nbsp;http.POST(payload);</code></li>
+              <li><code>&nbsp;&nbsp;http.end();</code></li>
+              <li><code>}</code></li>
+              <li><code></code></li>
+              <li><code>void loop() {</code></li>
+              <li><code>&nbsp;&nbsp;LeituraSensores dados = lerTodosSensores();</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;verificarSegurancaProximidade(dados.distanciaCM);</code></li>
+              <li><code>&nbsp;&nbsp;enviarParaNuvem(montarPayloadJSON(dados));</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;delay(2000);</code></li>
+              <li><code>}</code></li>
+            </ol>
+          </div>
+          <p class="code-note">Código representativo da lógica utilizada no projeto, ilustrando a leitura dos 6 sensores e o envio consolidado para a nuvem.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Arquitetura</h3>
+          <div class="flow-diagram">
+            <div class="flow-step"><span aria-hidden="true">📡</span><span>Sensores</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step"><span aria-hidden="true">🔧</span><span>ESP32 / Arduino</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step"><span aria-hidden="true">☁️</span><span>AWS</span></div>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <div class="flow-step"><span aria-hidden="true">📊</span><span>Dashboard</span></div>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Dificuldades Encontradas</h3>
+          <p>
+            Entre os principais desafios estiveram a calibração dos sensores para reduzir
+            variações entre unidades, a sincronização dos dados de diferentes sensores lidos
+            em intervalos distintos sem perder consistência temporal, e o tratamento de leituras
+            com ruído — especialmente do sensor ultrassônico, sensível a interferências e ecos
+            falsos — que exigiu filtragem e validação antes do envio para a nuvem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-detail" id="detail-visao-computacional" aria-hidden="true">
+    <div class="project-detail-scroll">
+      <button class="detail-back" type="button" data-close-detail>
+        <span aria-hidden="true">←</span> Voltar
+      </button>
+      <div class="detail-content container">
+        <p class="detail-tag">Visão Computacional</p>
+        <h2 class="detail-title">Treinamento de IA para Validação de Imagens</h2>
+        <p class="detail-summary">
+          Modelo de visão computacional treinado para automatizar a validação e classificação
+          de imagens em um processo de controle de qualidade, reduzindo a necessidade de
+          inspeção manual.
+        </p>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">O Problema</h3>
+          <p>
+            Processos de controle de qualidade que dependem de inspeção visual manual são lentos
+            e inconsistentes — o julgamento humano varia entre inspetores e piora com a fadiga.
+            Era necessário um método automatizado e repetível para validar imagens em escala.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Processo de Treinamento</h3>
+          <ol class="process-steps">
+            <li>Preparação do dataset — coleta e rotulagem das imagens</li>
+            <li>Treinamento do modelo</li>
+            <li>Teste de acurácia</li>
+            <li>Validação de resultados</li>
+          </ol>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Lógica Construída</h3>
+          <div class="code-block">
+            <ol class="code-lines">
+              <li><code>import tensorflow as tf</code></li>
+              <li><code>from tensorflow.keras.preprocessing.image import load_img, img_to_array</code></li>
+              <li><code></code></li>
+              <li><code>IMG_SIZE = (224, 224)</code></li>
+              <li><code></code></li>
+              <li><code>def preprocessar_imagem(caminho):</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;imagem = load_img(caminho, target_size=IMG_SIZE)</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;array = img_to_array(imagem) / 255.0</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;return tf.expand_dims(array, axis=0)</code></li>
+              <li><code></code></li>
+              <li><code>def validar_imagem(modelo, caminho, limiar=0.85):</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;entrada = preprocessar_imagem(caminho)</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;predicao = modelo.predict(entrada, verbose=0)[0][0]</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;aprovado = predicao >= limiar</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;return {</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"arquivo": caminho,</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"confianca": float(predicao),</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"aprovado": aprovado</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></li>
+              <li><code></code></li>
+              <li><code>modelo = tf.keras.models.load_model("modelo_validacao.h5")</code></li>
+              <li><code>resultado = validar_imagem(modelo, "amostra_lote_042.jpg")</code></li>
+              <li><code></code></li>
+              <li><code>print(f"Aprovado: {resultado['aprovado']} | Confianca: {resultado['confianca']:.2%}")</code></li>
+            </ol>
+          </div>
+          <p class="code-note">Código representativo da lógica utilizada no projeto</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Dificuldades Encontradas</h3>
+          <p>
+            Os principais obstáculos foram o dataset desbalanceado, com muito mais exemplos de
+            um resultado do que de outro, o que exigiu técnicas de balanceamento e aumento de
+            dados; o overfitting do modelo nos treinos iniciais, corrigido com regularização e
+            mais dados de validação; e o ajuste fino de hiperparâmetros — taxa de aprendizado,
+            tamanho de batch — até atingir uma acurácia consistente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-detail" id="detail-vagas-ia" aria-hidden="true">
+    <div class="project-detail-scroll">
+      <button class="detail-back" type="button" data-close-detail>
+        <span aria-hidden="true">←</span> Voltar
+      </button>
+      <div class="detail-content container">
+        <p class="detail-tag">IA · Automação</p>
+        <h2 class="detail-title">Automação de Busca de Vagas com IA</h2>
+        <p class="detail-summary">
+          Pipeline de automação construído em n8n com um agente de IA que utiliza tool calling
+          para buscar, classificar e organizar vagas de estágio, integrando múltiplas APIs REST
+          e fontes de dados diferentes.
+        </p>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">O Problema</h3>
+          <p>
+            Acompanhar manualmente vagas de estágio publicadas em múltiplas plataformas e fontes
+            é repetitivo e consome tempo que poderia ser usado nas candidaturas em si. Era
+            necessário automatizar a coleta e, principalmente, a triagem de relevância dessas
+            vagas.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Arquitetura Completa</h3>
+          <figure class="detail-figure">
+            <img src="assets/n8n-vaga1.png" alt="Fluxo n8n com Schedule Trigger e API Adzuna classificando vagas relevantes" loading="lazy" onerror="this.classList.add('img-missing')">
+            <figcaption>
+              Fluxo 1: Schedule Trigger + API Adzuna — o agente busca vagas reais periodicamente
+              e classifica como relevantes as que combinam com o perfil.
+            </figcaption>
+          </figure>
+          <figure class="detail-figure">
+            <img src="assets/n8n-vaga2.png" alt="Fluxo n8n com RSS Feed Trigger via Google Alerts classificando uma vaga como irrelevante" loading="lazy" onerror="this.classList.add('img-missing')">
+            <figcaption>
+              Fluxo 2: RSS Feed Trigger (Google Alerts) — a IA analisa uma vaga real captada
+              pelo feed e a classifica como irrelevante, justificando a decisão.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Como Funciona</h3>
+          <p>
+            O pipeline combina múltiplos triggers — um Schedule Trigger que consulta
+            periodicamente a API da Adzuna e um RSS Feed Trigger que monitora alertas do Google —
+            para captar vagas de fontes diferentes. Cada vaga coletada passa por um agente de IA
+            que analisa o conteúdo e classifica a relevância com base no meu perfil e nos
+            critérios definidos. Um filtro condicional decide se a vaga segue no fluxo, e as
+            vagas aprovadas são registradas automaticamente em uma planilha, prontas para
+            candidatura.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Dificuldades Encontradas</h3>
+          <p>
+            A configuração do OAuth2 no Google Cloud para autenticar o acesso às planilhas e
+            aos alertas foi um dos pontos mais trabalhosos, exigindo atenção aos escopos de
+            permissão. Também foi necessário padronizar os dados vindos de fontes diferentes —
+            a API estruturada da Adzuna e o feed RSS não estruturado — em um formato único antes
+            da classificação. Por fim, ajustar o prompt do agente de IA para evitar falsos
+            positivos, vagas classificadas como relevantes sem realmente serem, exigiu iteração
+            e testes com casos reais.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-reveal="fade-up">Skills</p>
+      <h2 class="section-title reveal" data-reveal="fade-up">Ferramentas e tecnologias</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal" data-reveal="fade-up">
+          <h3 class="skill-cat">Linguagens</h3>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>C/C++</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-card reveal" data-reveal="fade-up">
+          <h3 class="skill-cat">Embarcados &amp; IoT</h3>
+          <ul class="skill-list">
+            <li>Arduino</li>
+            <li>ESP32</li>
+            <li>Sensores</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+        <div class="skill-card reveal" data-reveal="fade-up">
+          <h3 class="skill-cat">IA &amp; Automação</h3>
+          <ul class="skill-list">
+            <li>n8n</li>
+            <li>Agentes de IA</li>
+            <li>Visão Computacional</li>
+          </ul>
+        </div>
+        <div class="skill-card reveal" data-reveal="fade-up">
+          <h3 class="skill-cat">Ferramentas</h3>
+          <ul class="skill-list">
+            <li>Git / GitHub</li>
+            <li>Oracle SQL</li>
+            <li>Cisco Packet Tracer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt contact-section" id="contato">
+    <div class="container">
+      <p class="section-eyebrow reveal" data-reveal="fade-up">Contato</p>
+      <h2 class="section-title reveal" data-reveal="fade-up">Vamos conversar</h2>
+      <p class="contact-text reveal" data-reveal="fade-up">
+        Estou aberto a novas oportunidades, colaborações e conversas sobre tecnologia.
+        Fique à vontade para entrar em contato.
+      </p>
+      <div class="contact-links reveal" data-reveal="fade-up">
+        <a href="mailto:lucasbonomi@icloud.com" class="contact-card">
+          <span class="contact-icon">✉️</span>
+          <span>
+            <span class="contact-label">E-mail</span>
+            <span class="contact-value">lucasbonomi@icloud.com</span>
+          </span>
+        </a>
+        <a href="https://linkedin.com/in/lucasbsmagalhaes" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <span class="contact-icon">🔗</span>
+          <span>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/lucasbsmagalhaes</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Lucas Bonomi Salvador Magalhães. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

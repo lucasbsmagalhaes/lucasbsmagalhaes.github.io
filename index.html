@@ -167,6 +167,26 @@
             <span>Maya</span><span>Substance Painter</span>
           </div>
         </article>
+
+        <article class="project-card project-card--expandable reveal" data-reveal="fade-up" data-project="gamequery" tabindex="0" role="button" aria-haspopup="dialog" aria-expanded="false">
+          <div class="project-card-head">
+            <span class="project-icon">🗣️</span>
+            <span class="project-tag">IA · Text-to-SQL</span>
+          </div>
+          <h3 class="project-name">GameQuery</h3>
+          <p class="project-desc">
+            Aplicação que converte perguntas em português para consultas SQL usando IA,
+            permitindo consultar um banco de dados em linguagem natural, sem escrever
+            uma linha de código SQL.
+          </p>
+          <div class="project-stack">
+            <span>Python</span><span>Streamlit</span><span>SQLite</span><span>Gemini API</span>
+          </div>
+          <div class="project-card-cta">
+            <span>Ver estudo de caso</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -406,6 +426,112 @@
             dados; o overfitting do modelo nos treinos iniciais, corrigido com regularização e
             mais dados de validação; e o ajuste fino de hiperparâmetros — taxa de aprendizado,
             tamanho de batch — até atingir uma acurácia consistente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-detail" id="detail-gamequery" aria-hidden="true">
+    <div class="project-detail-scroll">
+      <button class="detail-back" type="button" data-close-detail>
+        <span aria-hidden="true">←</span> Voltar
+      </button>
+      <div class="detail-content container">
+        <p class="detail-tag">IA · Text-to-SQL</p>
+        <h2 class="detail-title">GameQuery</h2>
+        <p class="detail-summary">
+          Aplicação de text-to-SQL: o usuário faz uma pergunta em português e uma IA gera e
+          executa a consulta SQL correspondente em um banco de dados, retornando o resultado
+          sem que seja necessário escrever código.
+        </p>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">O Problema</h3>
+          <p>
+            Consultar um banco de dados normalmente exige conhecimento de SQL, o que limita o
+            acesso à informação a quem sabe programar. A ideia do GameQuery foi permitir que
+            qualquer pessoa consulte dados fazendo perguntas em linguagem natural, sem precisar
+            entender a estrutura ou a sintaxe do banco.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Como Funciona</h3>
+          <p>
+            O usuário digita uma pergunta em português. Essa pergunta, junto com o schema do
+            banco de dados, é enviada para a IA (Google Gemini), que gera a consulta SQL
+            correspondente. Antes de qualquer execução, a consulta passa por uma validação de
+            segurança que garante que apenas comandos <code>SELECT</code> sejam permitidos. Só
+            então a consulta é executada em um banco SQLite, e tanto o SQL gerado quanto o
+            resultado são exibidos para o usuário. A stack utilizada foi Python, Streamlit,
+            SQLite e a API do Google Gemini.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Demonstração</h3>
+          <figure class="detail-figure">
+            <img src="assets/gamequery-1-top-notas.png" alt="Consulta simples com ordenação e limite, retornando o top 5 por nota" loading="lazy" onerror="this.classList.add('img-missing')">
+            <figcaption>Consulta simples: ordenação e limite (top 5 por nota).</figcaption>
+          </figure>
+          <figure class="detail-figure">
+            <img src="assets/gamequery-2-rpg-2023.png" alt="Consulta com filtros combinados de gênero e ano, interpretando corretamente a intenção mesmo com erros de digitação" loading="lazy" onerror="this.classList.add('img-missing')">
+            <figcaption>Consulta com filtros combinados (gênero e ano), interpretando corretamente a intenção mesmo com erros de digitação.</figcaption>
+          </figure>
+          <figure class="detail-figure">
+            <img src="assets/gamequery-3-media-plataforma.png" alt="Consulta avançada com JOIN entre tabelas, agregação por média e agrupamento" loading="lazy" onerror="this.classList.add('img-missing')">
+            <figcaption>Consulta avançada: JOIN entre tabelas com agregação (AVG) e agrupamento (GROUP BY).</figcaption>
+          </figure>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Lógica Construída</h3>
+          <div class="code-block">
+            <ol class="code-lines">
+              <li><code>import re</code></li>
+              <li><code></code></li>
+              <li><code>COMANDOS_PROIBIDOS = [</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;"INSERT", "UPDATE", "DELETE", "DROP",</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;"ALTER", "CREATE", "TRUNCATE", "ATTACH"</code></li>
+              <li><code>]</code></li>
+              <li><code></code></li>
+              <li><code>def validar_sql(query: str) -> bool:</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;query_normalizada = query.strip().upper()</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;if not query_normalizada.startswith("SELECT"):</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;for comando in COMANDOS_PROIBIDOS:</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if re.search(rf"\b{comando}\b", query_normalizada):</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;if ";" in query_normalizada.rstrip(";"):</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;return True</code></li>
+              <li><code></code></li>
+              <li><code>def executar_consulta_segura(query: str, conexao):</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;if not validar_sql(query):</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise ValueError("Consulta bloqueada: apenas SELECT é permitido.")</code></li>
+              <li><code></code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;cursor = conexao.cursor()</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;cursor.execute(query)</code></li>
+              <li><code>&nbsp;&nbsp;&nbsp;&nbsp;return cursor.fetchall()</code></li>
+            </ol>
+          </div>
+          <p class="code-note">Trecho representativo da camada de segurança do projeto</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 class="detail-heading">Dificuldades Encontradas</h3>
+          <p>
+            O maior desafio foi garantir, por segurança, que a IA gerasse apenas consultas de
+            leitura — nenhum comando que altere ou apague dados pode ser executado, daí a camada
+            de validação dedicada. Também foi necessário fornecer o schema completo do banco no
+            prompt para que a IA acertasse os nomes corretos de tabelas e colunas ao montar o
+            SQL, e lidar com os limites de cota da API de IA, que exigiram tratamento de erros e
+            controle de uso nas chamadas.
           </p>
         </div>
       </div>

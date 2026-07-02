@@ -792,6 +792,13 @@ body.no-scroll {
   border-bottom: none;
 }
 
+/* ===== Sobre o Site ===== */
+.about-site-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
 /* ===== Contact ===== */
 .contact-section {
   text-align: left;
@@ -886,6 +893,10 @@ body.no-scroll {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .about-site-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 720px) {
@@ -970,6 +981,10 @@ body.no-scroll {
   }
 
   .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-site-grid {
     grid-template-columns: 1fr;
   }
 

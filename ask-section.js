@@ -13,21 +13,31 @@
     // Efeito de digitação leve, no espírito das transições suaves do site
     el.classList.remove('loading');
     el.textContent = '';
+
+    const textNode = document.createTextNode('');
+    el.appendChild(textNode);
+
     const cursor = document.createElement('span');
     cursor.className = 'ask-cursor';
     el.appendChild(cursor);
 
     let i = 0;
-    const speed = 12; // ms por caractere
-    const timer = setInterval(() => {
+    const charsPerFrame = 2; // avança ~2 caracteres por frame, sem reflow por letra
+
+    function step() {
+      i += charsPerFrame;
+
       if (i >= text.length) {
-        clearInterval(timer);
+        textNode.textContent = text;
         cursor.remove();
         return;
       }
-      cursor.insertAdjacentText('beforebegin', text[i]);
-      i++;
-    }, speed);
+
+      textNode.textContent = text.slice(0, i);
+      requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
   }
 
   async function ask(question) {

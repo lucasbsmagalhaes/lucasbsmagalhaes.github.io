@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="chat-widget.css">
+<link rel="stylesheet" href="ask-section.css">
 </head>
 <body>
 
@@ -22,6 +22,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
+      <li><a href="#ask" class="nav-link">Pergunte</a></li>
       <li><a href="#sobre" class="nav-link">Sobre</a></li>
       <li><a href="#projetos" class="nav-link">Projetos</a></li>
       <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -52,6 +53,48 @@
     <a href="#sobre" class="scroll-cue" aria-label="Rolar para baixo">
       <span></span>
     </a>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO "PERGUNTE SOBRE O LUCAS" (estilo busca)
+       Colar logo APÓS o fechamento da seção Hero (</section>)
+       ============================================================ -->
+  <section id="ask" class="ask-section">
+    <div class="ask-inner">
+      <p class="ask-eyebrow">PERGUNTE À IA</p>
+      <h2 class="ask-title">O que você quer saber sobre o Lucas?</h2>
+      <p class="ask-subtitle">
+        Um assistente treinado com o perfil do Lucas. Pergunte sobre projetos, skills ou formação.
+      </p>
+
+      <div class="ask-bar">
+        <svg class="ask-bar-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-3.5-3.5"/>
+        </svg>
+        <input
+          id="ask-input"
+          type="text"
+          placeholder="Pergunte qualquer coisa sobre o Lucas..."
+          maxlength="500"
+          autocomplete="off"
+        />
+        <button id="ask-send" aria-label="Perguntar">Perguntar</button>
+      </div>
+
+      <div class="ask-suggestions" id="ask-suggestions">
+        <button class="ask-chip">Quais os principais projetos?</button>
+        <button class="ask-chip">Fala sobre o AgroVision AI</button>
+        <button class="ask-chip">Quais tecnologias ele domina?</button>
+        <button class="ask-chip">Que tipo de estágio ele busca?</button>
+      </div>
+
+      <!-- Resposta (aparece após perguntar, estilo resultado de busca) -->
+      <div id="ask-result" class="ask-result" hidden>
+        <div class="ask-result-question" id="ask-result-question"></div>
+        <div class="ask-result-answer" id="ask-result-answer"></div>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="sobre">
@@ -691,21 +734,6 @@
 </footer>
 
 <script src="script.js"></script>
-
-<!-- Widget "Pergunte sobre o Lucas" — cole antes do </body> -->
-<button id="chat-toggle" aria-label="Abrir chat sobre o Lucas">💬</button>
-
-<div id="chat-panel">
-  <div id="chat-header">
-    <span>Pergunte sobre o Lucas</span>
-    <button id="chat-close" aria-label="Fechar chat">✕</button>
-  </div>
-  <div id="chat-messages"></div>
-  <div id="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Digite sua pergunta..." maxlength="500" />
-    <button id="chat-send">Enviar</button>
-  </div>
-</div>
-<script src="chat-widget.js"></script>
+<script src="ask-section.js"></script>
 </body>
 </html>

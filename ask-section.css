@@ -1,0 +1,185 @@
+/* ============================================================
+   SEÇÃO "PERGUNTE SOBRE O LUCAS" (estilo busca)
+   Paleta alinhada ao site: dark navy + accent ciano/azul
+   ============================================================ */
+:root {
+  --ask-bg: transparent;                 /* herda o fundo escuro do site */
+  --ask-surface: rgba(255, 255, 255, 0.04);
+  --ask-surface-hover: rgba(255, 255, 255, 0.07);
+  --ask-border: rgba(255, 255, 255, 0.10);
+  --ask-border-focus: rgba(93, 209, 230, 0.55);
+  --ask-accent: #3dd6d0;                  /* ciano do "OLÁ, EU SOU" */
+  --ask-accent-2: #4a9fff;                /* azul do botão */
+  --ask-text: #f5f7fa;
+  --ask-text-dim: #9aa7b8;
+  --ask-ease: cubic-bezier(0.22, 1, 0.36, 1); /* mesmo easing PS5 do resto do site */
+}
+
+.ask-section {
+  width: 100%;
+  padding: 96px 24px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.ask-inner {
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+}
+
+.ask-eyebrow {
+  color: var(--ask-accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin: 0 0 12px;
+}
+
+.ask-title {
+  color: var(--ask-text);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+.ask-subtitle {
+  color: var(--ask-text-dim);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 36px;
+}
+
+/* ===== Barra de busca ===== */
+.ask-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ask-surface);
+  border: 1px solid var(--ask-border);
+  border-radius: 999px;
+  padding: 6px 6px 6px 20px;
+  transition: border-color 0.4s var(--ask-ease), box-shadow 0.4s var(--ask-ease),
+              transform 0.4s var(--ask-ease);
+  backdrop-filter: blur(8px);
+}
+.ask-bar:focus-within {
+  border-color: var(--ask-border-focus);
+  box-shadow: 0 0 0 4px rgba(61, 214, 208, 0.10), 0 8px 30px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.ask-bar-icon {
+  color: var(--ask-text-dim);
+  flex-shrink: 0;
+}
+
+#ask-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ask-text);
+  font-size: 16px;
+  padding: 12px 0;
+}
+#ask-input::placeholder { color: var(--ask-text-dim); }
+
+#ask-send {
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  color: #061018;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--ask-accent-2), var(--ask-accent));
+  transition: transform 0.4s var(--ask-ease), filter 0.4s var(--ask-ease),
+              opacity 0.3s var(--ask-ease);
+}
+#ask-send:hover { transform: translateY(-1px); filter: brightness(1.08); }
+#ask-send:disabled { opacity: 0.55; cursor: default; transform: none; filter: none; }
+
+/* ===== Chips de sugestão ===== */
+.ask-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.ask-chip {
+  background: var(--ask-surface);
+  border: 1px solid var(--ask-border);
+  color: var(--ask-text-dim);
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.35s var(--ask-ease), color 0.35s var(--ask-ease),
+              border-color 0.35s var(--ask-ease), transform 0.35s var(--ask-ease);
+}
+.ask-chip:hover {
+  background: var(--ask-surface-hover);
+  color: var(--ask-text);
+  border-color: var(--ask-border-focus);
+  transform: translateY(-1px);
+}
+
+/* ===== Área de resposta (resultado de busca) ===== */
+.ask-result {
+  margin-top: 32px;
+  text-align: left;
+  background: var(--ask-surface);
+  border: 1px solid var(--ask-border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ask-ease), transform 0.5s var(--ask-ease);
+}
+.ask-result.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ask-result-question {
+  color: var(--ask-accent);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ask-border);
+}
+
+.ask-result-answer {
+  color: var(--ask-text);
+  font-size: 16px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+.ask-result-answer.loading {
+  color: var(--ask-text-dim);
+  font-style: italic;
+}
+
+/* Cursor "digitando" durante o stream de texto */
+.ask-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--ask-accent);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: askBlink 1s steps(2) infinite;
+}
+@keyframes askBlink { 50% { opacity: 0; } }
+
+@media (max-width: 560px) {
+  .ask-section { padding: 64px 18px; }
+  #ask-send { padding: 12px 18px; font-size: 14px; }
+  #ask-input { font-size: 15px; }
+}

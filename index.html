@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chat-widget.css">
 </head>
 <body>
 
@@ -690,5 +691,21 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- Widget "Pergunte sobre o Lucas" — cole antes do </body> -->
+<button id="chat-toggle" aria-label="Abrir chat sobre o Lucas">💬</button>
+
+<div id="chat-panel">
+  <div id="chat-header">
+    <span>Pergunte sobre o Lucas</span>
+    <button id="chat-close" aria-label="Fechar chat">✕</button>
+  </div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-row">
+    <input id="chat-input" type="text" placeholder="Digite sua pergunta..." maxlength="500" />
+    <button id="chat-send">Enviar</button>
+  </div>
+</div>
+<script src="chat-widget.js"></script>
 </body>
 </html>
